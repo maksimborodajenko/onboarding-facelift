@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+
+    <!-- Link to the favicon -->
+    <link rel="icon" href="../assets/icons/pawn-thick.svg" type="image/svg+xml" />
+    <!-- You can also use PNG or other formats -->
+    <!-- <link rel="icon" href="path/to/your/favicon.png" type="image/png"> -->
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/cc-typography.css" />
+    <link rel="stylesheet" href="../css/cc-design-system.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Link to the new CSS file -->
+  </head>
+  <body class="dark-mode">
+    <div class="top">
+        <div class="top">
+            <button class="cc-button-component cc-button-icon ">
+              <span class="cc-icon-medium icon-font-chess arrow-left"></span>
+            </button>
+          </div>
+      <div class="top">
+        <img src="../assets/images/logo_white.svg" alt="Chess.com logo" />
+      </div>
+
+      <div class="top"></div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div>
+        <h1 class="heading-large">Enter Your Email and a Password</h1>
+        <h2 hidden class="heading-xx-small">Get matched with opponents at your skill level.</h2>
+      </div>
+                 <!--Email and Password Inputs-->
+                 <div class="input-container">
+  
+                <!--Password start-->
+                <div class="index-form-group">
+                  <div class="index-input-wrap">
+                    <div class="cc-input-group-component index-input">
+                      <input class="cc-input-component cc-input-medium cc-input-group-space-prepend cc-input-group-space-append" step="1" type="password" id="registration_password" autocomplete="new-password" name="registration[password]" placeholder="Password" spellcheck="false" value=""> <div class="cc-input-group-pre">
+                        <span class="lock icon-font-chess cc-input-group-icon cc-input-group-large">
+                        </span>
+                      </div> 
+                      <!----> 
+                      <button type="button" class="cc-input-group-post" aria-label="Toggle password visibility" data-tooltip-target="0">
+                        <span class="eye icon-font-chess cc-input-group-icon cc-input-group-large">
+                      </span>
+                    </button>
+                  </div>
+                </div> 
+                <div class="form-error-component index-input-error index-password-error" style="display: none;">
+                </div>
+              </div>
+              <!--Password end-->
+               </div>
+              <!--Email and Password Input end-->
+              
+        <!--Button section start-->
+          <div class="section-button">
+            <button
+            class="cc-button-component cc-button-primary cc-button-xx-large cc-button-full"
+          >
+            Continue
+          </button>
+        </div>
+        <!--Button section end-->
+        </div>
+       
+      </div>
+    </div>
+
+    <script>
+      // Apply dark mode by default
+      document.body.classList.add("dark-mode");
+
+      // Select all radio buttons
+      const buttons = document.querySelectorAll('input[type="radio"]');
+
+      // Add change event listener to each radio button
+      buttons.forEach(button => {
+          button.addEventListener('change', function() {
+              // When a radio button is checked, remove 'selected' class from all labels
+              buttons.forEach(btn => {
+                  const label = btn.parentElement; // Get the parent label
+                  label.classList.remove('selected'); // Remove 'selected' class from the label
+              });
+
+              // Add 'selected' class to the label of the checked radio button
+              const checkedLabel = this.parentElement; // Get the parent label of the checked radio button
+              checkedLabel.classList.add('selected'); // Add 'selected' class to the checked label
+          });
+      });
+    </script>
+  </body>
+</html>

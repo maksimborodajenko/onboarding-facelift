@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone</title>
+
+    <!-- Link to the favicon -->
+    <link rel="icon" href="../assets/../assets/icons/pawn-thick.svg" type="image/svg+xml" />
+    <!-- You can also use PNG or other formats -->
+    <!-- <link rel="icon" href="path/to/your/favicon.png" type="image/png"> -->
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/cc-typography.css" />
+    <link rel="stylesheet" href="../css/cc-design-system.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Link to the new CSS file -->
+  </head>
+  <body class="dark-mode">
+    <div class="top">
+        <div class="top">
+            <button class="cc-button-component cc-button-icon ">
+              <span class="cc-icon-medium icon-font-chess arrow-left"></span>
+            </button>
+          </div>
+      <div class="top">
+        <img src="../assets/images/logo_white.svg" alt="Chess.com logo" />
+      </div>
+
+      <div class="top"></div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div>
+        <h1 class="heading-large">Enter Your Phone Number</h1>
+        <h2 class="heading-xx-small">We will send you an SMS with a confirmation code.</h2>
+      </div>
+          <div class="country-code-container">
+            <div class="dropdown-container">
+                <div class="input-wrapper">
+                    <button id="dropdown-input" class="dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="../assets/icons/flag_us.svg" alt="US Flag" class="flag-icon"> <!-- USA Flag -->
+                        <span class="dynamic-label">+1</span> <!-- Preselected USA country code -->
+                        <span class="dropdown-icon">&#9662;</span> <!-- Dropdown icon -->
+                    </button>
+                </div>
+                <div id="dropdown-list" class="dropdown-list">
+                    <div class="dropdown-item" data-code="+1">
+                        <img src="../assets/icons/flag_us.svg" alt="US Flag" class="flag-icon"> <!-- Flag icon -->
+                        <span class="country-code">+1</span> <!-- Country code -->
+                    </div>
+                    <div class="dropdown-item" data-code="+1">
+                        <img src="../assets/icons/flag_ca.svg" alt="Canada Flag">
+                        <span class="country-code">+1</span>
+                    </div>
+                    <div class="dropdown-item" data-code="+44">
+                        <img src="../assets/icons/flag_gb.svg" alt="UK Flag">
+                        <span class="country-code">+44</span>
+                    </div>
+                    <div class="dropdown-item" data-code="+61">
+                        <img src="../assets/icons/flag_au.svg" alt="Australia Flag">
+                        <span class="country-code">+61</span>
+                    </div>
+                </div>
+            </div>
+            <div class="index-form-group index-email">
+              <div class="index-input-wrap">
+                <div class="cc-input-group-component index-input">
+                  <input class="input-container cc-input-component cc-input-medium cc-input-group-space-prepend" step="1" type="phone" id="registration_phone" autocomplete="phone" name="registration[phone]" placeholder="Phone number" spellcheck="false" value="">
+                 
+                <!----> 
+                <!---->
+              </div> 
+              <span id="autosuggestion-span" class="index-email-text"></span>
+               <div class="domain-autosuggestion-component">
+                <span class="domain-autosuggestion-hidden"></span> 
+                <span class="domain-autosuggestion-ending"></span>
+              </div>
+            </div> 
+             <div class="form-error-component"></div>
+            </div>
+        
+            
+        </div>
+
+        <div class="section-divider">
+            <div class="line"></div>
+            <p class="cc-text-label section-divider">OR</p>
+            <div class="line"></div>
+          </div>
+
+        <button class="cc-button-component cc-button-secondary cc-button-medium cc-button-full cc-system-font">
+            <span class="mail-alt icon-font-chess cc-icon-medium"></span>
+            Continue with Email
+         </button>
+
+        <div class="section-button">
+            <button
+            class="cc-button-component cc-button-primary cc-button-xx-large cc-button-full"
+          >
+            Continue
+          </button>
+        </div>
+       
+      </div>
+    </div>
+
+    <script>
+      // Apply dark mode by default
+      document.body.classList.add("dark-mode");
+
+      // Select all radio buttons
+      const buttons = document.querySelectorAll('input[type="radio"]');
+
+      // Add change event listener to each radio button
+      buttons.forEach(button => {
+          button.addEventListener('change', function() {
+              // When a radio button is checked, remove 'selected' class from all labels
+              buttons.forEach(btn => {
+                  const label = btn.parentElement; // Get the parent label
+                  label.classList.remove('selected'); // Remove 'selected' class from the label
+              });
+
+              // Add 'selected' class to the label of the checked radio button
+              const checkedLabel = this.parentElement; // Get the parent label of the checked radio button
+              checkedLabel.classList.add('selected'); // Add 'selected' class to the checked label
+          });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // Wait for the DOM to fully load before executing the script
+
+          const input = document.getElementById('dropdown-input');
+          // Get the input element where the user types
+
+          const dropdownList = document.getElementById('dropdown-list');
+          // Get the dropdown list that contains the options
+
+          const items = dropdownList.getElementsByClassName('dropdown-item');
+          // Get all the dropdown items (options) within the dropdown list
+
+          input.addEventListener('focus', function() {
+              // When the input field is focused (clicked on)
+              dropdownList.style.display = 'block';
+              // Show the dropdown list
+          });
+
+          document.addEventListener('click', function(event) {
+              // Add a click event listener to the entire document
+              if (!dropdownList.contains(event.target) && event.target !== input) {
+                  // If the click is outside the dropdown list and the input field
+                  dropdownList.style.display = 'none';
+                  // Hide the dropdown list
+              }
+          });
+
+          input.addEventListener('input', function() {
+              // When the user types in the input field
+              const filter = input.value.toLowerCase();
+              // Get the current input value and convert it to lowercase for case-insensitive comparison
+
+              for (let i = 0; i < items.length; i++) {
+                  // Loop through all dropdown items
+                  const item = items[i];
+                  // Get the current dropdown item
+
+                  if (item.textContent.toLowerCase().includes(filter)) {
+                      // If the item's text includes the input value
+                      item.style.display = 'block'; // Show the item
+                  } else {
+                      item.style.display = 'none'; // Hide the item
+                  }
+              }
+          });
+
+          for (let i = 0; i < items.length; i++) {
+              // Loop through all dropdown items again
+              items[i].addEventListener('click', function() {
+                  // Add a click event listener to each dropdown item
+                  input.value = this.querySelector('.country-code').textContent; // Set the input value to the clicked item's text
+                  dropdownList.style.display = 'none'; // Hide the dropdown list
+              });
+          }
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+          const dropdownButton = document.getElementById('dropdown-input');
+          const dropdownList = document.getElementById('dropdown-list');
+          const items = dropdownList.getElementsByClassName('dropdown-item');
+          const dynamicLabel = dropdownButton.querySelector('.dynamic-label');
+          const flagIcon = dropdownButton.querySelector('.flag-icon');
+
+          dropdownButton.addEventListener('click', function() {
+              const isExpanded = dropdownButton.getAttribute('aria-expanded') === 'true';
+              dropdownButton.setAttribute('aria-expanded', !isExpanded);
+              dropdownList.style.display = isExpanded ? 'none' : 'block'; // Toggle dropdown visibility
+          });
+
+          document.addEventListener('click', function(event) {
+              if (!dropdownList.contains(event.target) && event.target !== dropdownButton) {
+                  dropdownList.style.display = 'none'; // Hide dropdown if clicked outside
+                  dropdownButton.setAttribute('aria-expanded', 'false');
+              }
+          });
+
+          for (let i = 0; i < items.length; i++) {
+              items[i].addEventListener('click', function() {
+                  const countryCode = this.querySelector('.country-code').textContent; // Get selected country code
+                  const flagSrc = this.querySelector('img').src; // Get selected flag icon source
+                  dynamicLabel.textContent = countryCode; // Update dynamic label
+                  flagIcon.src = flagSrc; // Update flag icon
+                  dropdownList.style.display = 'none'; // Hide dropdown
+                  dropdownButton.setAttribute('aria-expanded', 'false');
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

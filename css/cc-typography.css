@@ -1,0 +1,141 @@
+.heading-x-large, .heading-x-large-bold {
+  font-family: var(--font-family-heading);
+  font-size: 4.2rem;
+  line-height: 1.14; /* 48 */
+}
+
+.heading-x-large-bold {
+  font-weight: 800;
+}
+
+.heading-large, .heading-large-bold {
+  font-family: var(--font-family-heading);
+  font-size: 3.6rem;
+  line-height: 1.11; /* 40 */
+}
+
+.heading-large-bold {
+  font-weight: 800;
+}
+
+.heading-medium, .heading-medium-bold {
+  font-family: var(--font-family-heading);
+  font-size: 3.1rem;
+  line-height: 1.16; /* 36 */
+}
+
+.heading-medium-bold {
+  font-weight: 800;
+}
+
+.heading-small, .heading-small-bold {
+  font-family: var(--font-family-heading);
+  font-size: 2.8rem;
+  line-height: 1.14; /* 32 */
+}
+
+.heading-small-bold {
+  font-weight: 800;
+}
+
+.heading-x-small, .heading-x-small-bold {
+  font-family: var(--font-family-heading);
+  font-size: 2.2rem;
+  line-height: 1.27; /* 28 */
+}
+
+.heading-x-small-bold {
+  font-weight: 800;
+}
+
+.heading-xx-small, .heading-xx-small-bold {
+  font-family: var(--font-family-heading);
+  font-size: 1.7rem;
+  line-height: 1.17; /* 20 */
+}
+
+.heading-xx-small-bold {
+  font-weight: 800;
+}
+
+.text-x-large, .text-x-large-bold {
+  font-size: 1.8rem;
+  line-height: 1.33; /* 24 */
+}
+
+.text-x-large-bold {
+  font-weight: 600;
+}
+
+.text-large, .text-large-bold {
+  font-size: 1.6rem;
+  line-height: 1.25; /* 20 */
+}
+
+.text-large-bold {
+  font-weight: 600;
+}
+
+.text-medium, .text-medium-bold {
+  font-size: 1.4rem;
+  line-height: 1.14; /* 16 */
+}
+
+.text-medium-bold {
+  font-weight: 600;
+}
+
+.text-small, .text-small-bold, .text-label {
+  font-size: 1.2rem;
+  line-height: 1.33; /* 16 */
+}
+
+.text-small-bold, .text-label {
+  font-weight: 600;
+}
+
+.text-x-small, .text-x-small-bold {
+  font-size: 1rem;
+  line-height: 1; /* 10 */
+}
+
+.text-x-small-bold {
+  font-weight: 600;
+}
+
+.text-label {
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.text-speech, .text-speech-bold {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.33; /* 20 */
+}
+
+.text-speech-bold {
+  font-weight: 600;
+}
+
+.paragraph-large, .paragraph-large-bold {
+  font-size: 1.6rem;
+  line-height: 1.5; /* 24 */
+}
+
+.paragraph-large-bold {
+  font-weight: 600;
+}
+
+.paragraph-medium, .paragraph-medium-bold {
+  font-size: 1.4rem;
+  line-height: 1.42; /* 20 */
+}
+
+.paragraph-medium-bold {
+  font-weight: 600;
+}
+
+.monospace {
+  font-variant-numeric: tabular-nums;
+}/*# sourceMappingURL=cc-typography.css.map */
